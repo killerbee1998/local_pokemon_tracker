@@ -23,7 +23,7 @@
 
 function local_pokemon_tracker_before_footer() {
     global $DB, $USER;
-    $messages = $DB->get_records('local_pokemon');
+    $pokemons = $DB->get_records('local_pokemon');
 
     // $sql = "SELECT lm.id, lm.messagetext, lm.messagetype FROM {local_message} lm
     //         LEFT OUTER JOIN {local_message_read} lmr ON lm.id = lmr.messageid
@@ -35,24 +35,11 @@ function local_pokemon_tracker_before_footer() {
 
     // $messages = $DB->get_records_sql($sql, $params);
 
-    $types = [
-        '0' => \core\output\notification::NOTIFY_WARNING,
-        '1' => \core\output\notification::NOTIFY_SUCCESS,
-        '2' => \core\output\notification::NOTIFY_ERROR,
-        '3' => \core\output\notification::NOTIFY_INFO
-    ];
-
     
-    foreach($messages as $message){
-        var_dump($types[$message->messagetype]); 
-        \core\notification::add($message->messagetext, $types[$message->messagetype]);
-
-        $readrecord = new stdClass();
-        $readrecord->messageid = $message->id;
-        $readrecord->userid = $USER->id;
-        $readrecord->timeread = time();
-
-        $DB->insert_record('local_pokemon_owned', $readrecord);
+    foreach($pokemons as $pokemon){
+        echo "<p> $pokemon->pokemonname </p>";
+        echo "<p> $pokemon->pokemontype1 </p>";
+        echo "<p> $pokemon->pokemontype1 </p>";
     }
 
 }
