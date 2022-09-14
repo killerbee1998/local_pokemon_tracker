@@ -33,7 +33,7 @@ echo $OUTPUT->header();
 
 $templatecontext = (object)[
     'pokemons' => array_values($pokemons),
-    'editurl' =>new moodle_url('/local/pokemon/edit.php')
+    'editurl' =>new moodle_url('/local/pokemon_tracker/edit.php')
 ];
 
 echo $OUTPUT->render_from_template('local_pokemon_tracker/manage', $templatecontext);
