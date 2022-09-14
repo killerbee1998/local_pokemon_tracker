@@ -31,10 +31,21 @@
     </button>
     <div class="collapse" id="collapseExample">
         <div class="card card-body">
-            <p>Type 1  </p>
-            <button  class="btn btn-outline-primary" style="width: 30%; margin-bottom: 1rem">{{pokemontype1}}</button>
-            <p>Type 2  </p>
-            <button  class="btn btn-outline-secondary" style="width: 30%;margin-bottom: 1rem">{{pokemontype2}}</button>
+            <div style="display: inline; margin-bottom: 1rem;">
+                <span style="margin-right: 1rem;">Type 1  </span>
+                <button  class="btn btn-outline-primary" style="width: 30%; ">{{pokemontype1}}</button>
+            </div>
+            
+            <div style="display: inline; margin-bottom: 1rem;">
+                <span style="margin-right: 1rem;">Type 2  </span>
+                <button  class="btn btn-outline-secondary" style="width: 30%; margin-bottom: 1rem">{{pokemontype2}}</button>
+            </div>
+
+            <form action="delete.php" method="post">
+                <input type="submit" name="pokemonid" value="{{id}}" id="delete_btn" style="font-size: 0; line-height: 0; "/>
+                <label for="delete_btn" class="btn btn-danger" style="margin-left: -1rem;"> Delete Pokemon </label>
+            </form>
+            
         </div>
     </div>
 {{/pokemons}}
