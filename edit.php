@@ -43,7 +43,7 @@ if ($mform->is_cancelled()) {
   $recordtoinsert->messagetext = $fromform->messagetext;
   $recordtoinsert->messagetype = $fromform->messagetype;
 
-  $DB->insert_record('local_message', $recordtoinsert);
+  $DB->insert_record('local_pokemon', $recordtoinsert);
   redirect($CFG->wwwroot . '/local/message/manage.php', get_string('create_form', 'local_pokemon_tracker'). $fromform->messagetext);
 }
 echo $OUTPUT->header();

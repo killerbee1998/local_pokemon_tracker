@@ -23,17 +23,17 @@
 
 function local_pokemon_tracker_before_footer() {
     global $DB, $USER;
-    $messages = $DB->get_records('local_message');
+    $messages = $DB->get_records('local_pokemon');
 
-    $sql = "SELECT lm.id, lm.messagetext, lm.messagetype FROM {local_message} lm
-            LEFT OUTER JOIN {local_message_read} lmr ON lm.id = lmr.messageid
-            WHERE lmr.userid <> :userid or lmr.userid IS NULL";
+    // $sql = "SELECT lm.id, lm.messagetext, lm.messagetype FROM {local_message} lm
+    //         LEFT OUTER JOIN {local_message_read} lmr ON lm.id = lmr.messageid
+    //         WHERE lmr.userid <> :userid or lmr.userid IS NULL";
     
-    $params = [
-        'userid' => $USER->id
-    ];
+    // $params = [
+    //     'userid' => $USER->id
+    // ];
 
-    $messages = $DB->get_records_sql($sql, $params);
+    // $messages = $DB->get_records_sql($sql, $params);
 
     $types = [
         '0' => \core\output\notification::NOTIFY_WARNING,
@@ -52,7 +52,7 @@ function local_pokemon_tracker_before_footer() {
         $readrecord->userid = $USER->id;
         $readrecord->timeread = time();
 
-        $DB->insert_record('local_message_read', $readrecord);
+        $DB->insert_record('local_pokemon_owned', $readrecord);
     }
 
 }
