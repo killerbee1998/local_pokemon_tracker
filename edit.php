@@ -21,10 +21,10 @@
  */
 
 require_once(__DIR__ . '/../../config.php');
-require_once($CFG->dirroot . '/local/message/classes/form/edit_form.php');
+require_once($CFG->dirroot . '/local/pokemon_tracker/classes/form/edit_form.php');
 global $DB;
 
-$actionUrl = new moodle_url('/local/message/edit.php');
+$actionUrl = new moodle_url('/local/pokemon_tracker/edit.php');
 
 $PAGE->set_url($actionUrl);
 $PAGE->set_context(\context_system::instance());
@@ -36,16 +36,18 @@ $mform = new edit_form($actionUrl);
 if ($mform->is_cancelled()) {
   //Handle form cancel operation, if cancel button is present on form
 
-  redirect($CFG->wwwroot . '/local/message/manage.php', get_string('cancel_form', 'local_pokemon_tracker'));
+  redirect($CFG->wwwroot . '/local/pokemon_tracker/manage.php', get_string('cancel_form', 'local_pokemon_tracker'));
 } else if ($fromform = $mform->get_data()) {
   //In this case you process validated data. $mform->get_data() returns data posted in form.
   $recordtoinsert = new stdClass();
-  $recordtoinsert->messagetext = $fromform->messagetext;
-  $recordtoinsert->messagetype = $fromform->messagetype;
+  $recordtoinsert->pokemonname = $fromform->pokemonname;
+  $recordtoinsert->pokemontype1 = $fromform->pokemontype1;
+  $recordtoinsert->pokemontype2 = $fromform->pokemontype2;
 
   $DB->insert_record('local_pokemon', $recordtoinsert);
-  redirect($CFG->wwwroot . '/local/message/manage.php', get_string('create_form', 'local_pokemon_tracker'). $fromform->messagetext);
+  redirect($CFG->wwwroot . '/local/pokemon_tracker/manage.php', get_string('create_form', 'local_pokemon_tracker'). $fromform->pokemonname);
 }
+
 echo $OUTPUT->header();
 
 $mform->display();
