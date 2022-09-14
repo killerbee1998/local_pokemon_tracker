@@ -36,17 +36,17 @@ class edit_form extends moodleform {
        
         $mform = $this->_form; // Don't forget the underscore! 
 
-        $mform->addElement('text', 'messagetext', get_string('msg_txt', 'local_pokemon_tracker')); // Add elements to your form.
-        $mform->setType('messagetext', PARAM_NOTAGS);                   // Set type of element.
-        $mform->setDefault('messagetext', get_string('enter_msg', 'local_pokemon_tracker'));        // Default value.
+        $mform->addElement('text', 'pokemonname', get_string('msg_txt', 'local_pokemon_tracker')); // Add elements to your form.
+        $mform->setType('pokemonname', PARAM_NOTAGS);                   // Set type of element.
+        $mform->setDefault('pokemonname', get_string('enter_msg', 'local_pokemon_tracker'));        // Default value.
 
-        $choices = array();
-        $choices['0'] = \core\output\notification::NOTIFY_WARNING;
-        $choices['1'] = \core\output\notification::NOTIFY_SUCCESS;
-        $choices['2'] = \core\output\notification::NOTIFY_ERROR;
-        $choices['3'] = \core\output\notification::NOTIFY_INFO;
-        $mform->addElement('select',  'messagetype',  get_string('msg_type', 'local_pokemon_tracker'),  $choices);
-        $mform->setDefault('messagetype', 3);
+        $types = array("None","Normal", "Fire", "Water", "Grass", "Flying", "Fighting", "Poison", "Electric", "Ground", "Rock", "Psychic", "Ice", "Bug", "Ghost", "Steel", "Dragon", "Dark", "Fairy");
+
+        $mform->addElement('select',  'pokemontype1',  get_string('msg_type', 'local_pokemon_tracker'),  $types);
+        $mform->setDefault('messagetype', 0);
+
+        $mform->addElement('select',  'pokemontype2',  get_string('msg_type', 'local_pokemon_tracker'),  $types);
+        $mform->setDefault('messagetype', 0);
 
         $this->add_action_buttons();
 
