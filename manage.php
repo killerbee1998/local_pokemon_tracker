@@ -29,6 +29,13 @@ $PAGE->set_title(get_string('manage_msg', 'local_pokemon_tracker'));
 
 $pokemons = $DB->get_records('local_pokemon');
 
+$types = array("None","Normal", "Fire", "Water", "Grass", "Flying", "Fighting", "Poison", "Electric", "Ground", "Rock", "Psychic", "Ice", "Bug", "Ghost", "Steel", "Dragon", "Dark", "Fairy");
+
+foreach($pokemons as $pokemon){
+    $pokemon->pokemontype1 = $types[$pokemon->pokemontype1];
+    $pokemon->pokemontype2 = $types[$pokemon->pokemontype2]; 
+}
+
 echo $OUTPUT->header();
 
 $templatecontext = (object)[
