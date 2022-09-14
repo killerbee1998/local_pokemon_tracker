@@ -15,7 +15,7 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
- * @package   local_message
+ * @package   local_pokemon_tracker
  * @copyright 2020, Riasat Mahbub <riasat.mahbub@brainstation-23.com>
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
@@ -25,7 +25,7 @@ global $DB;
 
 $PAGE->set_url(new moodle_url('/local/message/manage.php'));
 $PAGE->set_context(\context_system::instance());
-$PAGE->set_title(get_string('manage_msg', 'local_message'));
+$PAGE->set_title(get_string('manage_msg', 'local_pokemon_tracker'));
 
 $messages = $DB->get_records('local_message');
 
@@ -36,6 +36,6 @@ $templatecontext = (object)[
     'editurl' =>new moodle_url('/local/message/edit.php')
 ];
 
-echo $OUTPUT->render_from_template('local_message/manage', $templatecontext);
+echo $OUTPUT->render_from_template('local_pokemon_tracker/manage', $templatecontext);
 
 echo $OUTPUT->footer();

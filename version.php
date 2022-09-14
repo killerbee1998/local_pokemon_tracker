@@ -22,6 +22,6 @@
 
 defined('MOODLE_INTERNAL') || die();
 
-$plugin->version = 2022120900;
+$plugin->version = 2022091400;
 $plugin->requires = 2016052300;
-$plugin->component = 'local_message';
+$plugin->component = 'local_pokemon_tracker';

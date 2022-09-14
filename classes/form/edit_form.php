@@ -15,7 +15,7 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
- * @package   local_message
+ * @package   local_pokemon_tracker
  * @copyright 2020, Riasat Mahbub <riasat.mahbub@brainstation-23.com>
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
@@ -36,16 +36,16 @@ class edit_form extends moodleform {
        
         $mform = $this->_form; // Don't forget the underscore! 
 
-        $mform->addElement('text', 'messagetext', get_string('msg_txt', 'local_message')); // Add elements to your form.
+        $mform->addElement('text', 'messagetext', get_string('msg_txt', 'local_pokemon_tracker')); // Add elements to your form.
         $mform->setType('messagetext', PARAM_NOTAGS);                   // Set type of element.
-        $mform->setDefault('messagetext', get_string('enter_msg', 'local_message'));        // Default value.
+        $mform->setDefault('messagetext', get_string('enter_msg', 'local_pokemon_tracker'));        // Default value.
 
         $choices = array();
         $choices['0'] = \core\output\notification::NOTIFY_WARNING;
         $choices['1'] = \core\output\notification::NOTIFY_SUCCESS;
         $choices['2'] = \core\output\notification::NOTIFY_ERROR;
         $choices['3'] = \core\output\notification::NOTIFY_INFO;
-        $mform->addElement('select',  'messagetype',  get_string('msg_type', 'local_message'),  $choices);
+        $mform->addElement('select',  'messagetype',  get_string('msg_type', 'local_pokemon_tracker'),  $choices);
         $mform->setDefault('messagetype', 3);
 
         $this->add_action_buttons();

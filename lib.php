@@ -15,13 +15,13 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
- * @package   local_message
+ * @package   local_pokemon_tracker
  * @copyright 2020, Riasat Mahbub <riasat.mahbub@brainstation-23.com>
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
 
-function local_message_before_footer() {
+function local_pokemon_tracker_before_footer() {
     global $DB, $USER;
     $messages = $DB->get_records('local_message');
 

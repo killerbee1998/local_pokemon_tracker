@@ -15,7 +15,7 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
- * @package   local_message
+ * @package   local_pokemon_tracker
  * @copyright 2020, Riasat Mahbub <riasat.mahbub@brainstation-23.com>
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
@@ -28,7 +28,7 @@ $actionUrl = new moodle_url('/local/message/edit.php');
 
 $PAGE->set_url($actionUrl);
 $PAGE->set_context(\context_system::instance());
-$PAGE->set_title(get_string('edit_msg', 'local_message'));
+$PAGE->set_title(get_string('edit_msg', 'local_pokemon_tracker'));
 
 $mform = new edit_form($actionUrl);
 
@@ -36,7 +36,7 @@ $mform = new edit_form($actionUrl);
 if ($mform->is_cancelled()) {
   //Handle form cancel operation, if cancel button is present on form
 
-  redirect($CFG->wwwroot . '/local/message/manage.php', get_string('cancel_form', 'local_message'));
+  redirect($CFG->wwwroot . '/local/message/manage.php', get_string('cancel_form', 'local_pokemon_tracker'));
 } else if ($fromform = $mform->get_data()) {
   //In this case you process validated data. $mform->get_data() returns data posted in form.
   $recordtoinsert = new stdClass();
@@ -44,7 +44,7 @@ if ($mform->is_cancelled()) {
   $recordtoinsert->messagetype = $fromform->messagetype;
 
   $DB->insert_record('local_message', $recordtoinsert);
-  redirect($CFG->wwwroot . '/local/message/manage.php', get_string('create_form', 'local_message'). $fromform->messagetext);
+  redirect($CFG->wwwroot . '/local/message/manage.php', get_string('create_form', 'local_pokemon_tracker'). $fromform->messagetext);
 }
 echo $OUTPUT->header();
 
