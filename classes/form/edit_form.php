@@ -38,6 +38,10 @@ class edit_form extends moodleform {
        
         $mform = $this->_form; // Don't forget the underscore! 
 
+        $mform->addElement('hidden', 'id', get_string('id', 'local_pokemon_tracker'));
+        $mform->setType('id', PARAM_INT);
+        $mform->setDefault('id', $this->data->id ?? "");
+
         $mform->addElement('text', 'pokemonname', get_string('msg_txt', 'local_pokemon_tracker')); // Add elements to your form.
         $mform->setType('pokemonname', PARAM_NOTAGS);                   // Set type of element.
         $mform->setDefault('pokemonname', get_string('enter_msg', 'local_pokemon_tracker'));        // Default value.
