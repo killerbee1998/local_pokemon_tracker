@@ -43,10 +43,10 @@ class edit_form extends moodleform {
         $types = array("None","Normal", "Fire", "Water", "Grass", "Flying", "Fighting", "Poison", "Electric", "Ground", "Rock", "Psychic", "Ice", "Bug", "Ghost", "Steel", "Dragon", "Dark", "Fairy");
 
         $mform->addElement('select',  'pokemontype1',  get_string('msg_type', 'local_pokemon_tracker'),  $types);
-        $mform->setDefault('messagetype', 0);
+        $mform->setDefault('pokemontype1', 0);
 
         $mform->addElement('select',  'pokemontype2',  get_string('msg_type', 'local_pokemon_tracker'),  $types);
-        $mform->setDefault('messagetype', 0);
+        $mform->setDefault('pokemontype2', 0);
 
         $this->add_action_buttons();
 
