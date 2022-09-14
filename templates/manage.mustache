@@ -23,10 +23,10 @@
 
     }
 }}
-<h1>The messages are</h1>
-{{#messages}}
-    <p>{{messagetext}}</p>
-{{/messages}}
+<h1>The Pokemons are</h1>
+{{#pokemons}}
+    <p>{{pokemonname}}</p>
+{{/pokemons}}
 
 <br>
-<input type="button" class="btn btn-primary" value="Create New Message" onclick="location.href='{{editurl}}'">
+<input type="button" class="btn btn-primary" value="Add New Pokemon" onclick="location.href='{{editurl}}'">

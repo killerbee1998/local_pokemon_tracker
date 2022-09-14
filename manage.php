@@ -23,17 +23,17 @@
 require_once(__DIR__ . '/../../config.php');
 global $DB;
 
-$PAGE->set_url(new moodle_url('/local/message/manage.php'));
+$PAGE->set_url(new moodle_url('/local/pokemon/manage.php'));
 $PAGE->set_context(\context_system::instance());
 $PAGE->set_title(get_string('manage_msg', 'local_pokemon_tracker'));
 
-$messages = $DB->get_records('local_pokemon');
+$pokemons = $DB->get_records('local_pokemon');
 
 echo $OUTPUT->header();
 
 $templatecontext = (object)[
-    'messages' => array_values($messages),
-    'editurl' =>new moodle_url('/local/message/edit.php')
+    'pokemons' => array_values($pokemons),
+    'editurl' =>new moodle_url('/local/pokemon/edit.php')
 ];
 
 echo $OUTPUT->render_from_template('local_pokemon_tracker/manage', $templatecontext);
