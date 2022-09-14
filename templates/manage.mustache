@@ -25,9 +25,18 @@
 }}
 <h1>The Pokemons are</h1>
 {{#pokemons}}
-    <p>{{pokemonname}}</p>
-    <p>{{pokemontype1}}</p>
-    <p>{{pokemontype2}}</p>
+
+    <button class="btn btn-outline-info" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample" style="margin-bottom: 2rem;">
+        {{pokemonname}}
+    </button>
+    <div class="collapse" id="collapseExample">
+        <div class="card card-body">
+            <p>Type 1  </p>
+            <button  class="btn btn-outline-primary" style="width: 30%; margin-bottom: 1rem">{{pokemontype1}}</button>
+            <p>Type 2  </p>
+            <button  class="btn btn-outline-secondary" style="width: 30%;margin-bottom: 1rem">{{pokemontype2}}</button>
+        </div>
+    </div>
 {{/pokemons}}
 
 <br>
