@@ -28,7 +28,7 @@ class edit_form extends moodleform {
 
     protected $id;
 
-    public function __construct($actionUrl, $id){
+    public function __construct($actionUrl, $id=null){
         $this->id = $id;
         parent::__construct($actionUrl);        
     }
