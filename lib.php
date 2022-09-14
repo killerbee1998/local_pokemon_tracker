@@ -36,10 +36,10 @@ function local_pokemon_tracker_before_footer() {
     // $messages = $DB->get_records_sql($sql, $params);
 
     
-    foreach($pokemons as $pokemon){
-        echo "<p> $pokemon->pokemonname </p>";
-        echo "<p> $pokemon->pokemontype1 </p>";
-        echo "<p> $pokemon->pokemontype1 </p>";
-    }
+    // foreach($pokemons as $pokemon){
+    //     echo "<p> $pokemon->pokemonname </p>";
+    //     echo "<p> $pokemon->pokemontype1 </p>";
+    //     echo "<p> $pokemon->pokemontype1 </p>";
+    // }
 
 }
