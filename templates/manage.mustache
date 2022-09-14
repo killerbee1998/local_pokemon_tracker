@@ -47,7 +47,7 @@
             </form>
 
             {{! edit pokemon data }}
-            <form action="edit1.php" method="post">
+            <form action="edit.php" method="post">
                 <input type="submit" name="pokemonid" value="{{id}}" id="update_btn" style="font-size: 0; line-height: 0; "/>
                 <label for="update_btn" class="btn btn-warning" style="margin-left: -1rem;"> Update {{pokemonname}} </label>
             </form>
@@ -58,4 +58,4 @@
 {{/pokemons}}
 
 <br>
-<input type="button" class="btn btn-primary" value="Add New Pokemon" onclick="location.href='{{editurl}}'">
+<input type="button" class="btn btn-primary" value="Add New Pokemon" onclick="location.href='{{createurl}}'">
