@@ -26,9 +26,11 @@ require_once("$CFG->libdir/formslib.php");
 class edit_form extends moodleform {
     //Add elements to form
 
-    public function __construct($actionUrl){
-        parent::__construct($actionUrl);
-        
+    protected $id;
+
+    public function __construct($actionUrl, $id){
+        $this->id = $id;
+        parent::__construct($actionUrl);        
     }
     
     public function definition() {
