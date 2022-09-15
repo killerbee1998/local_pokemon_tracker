@@ -22,14 +22,15 @@
 
 
 // forms/edit_form.php
- $string['enter_msg'] = 'Please enter a message';
- $string['msg_txt'] = 'Message Text';
- $string['msg_type'] = 'Message Type';
+ $string['enter_pkmn'] = 'Please enter a valid pokemon name';
+ $string['pkmn_name'] = 'Pokemon Name';
+ $string['pkmn_type'] = 'Message Type';
+ $string['id'] = "ID Number";
 
 //  edit.php
 $string['cancel_form'] = "You cancelled the message";
 $string['create_form'] = "You created a message with title ";
-$string['edit_msg'] = "Edit Messages";
+$string['edit_pkmn'] = "Edit Messages";
 
 // manage.php
-$string['manage_msg'] = "Manage Messages";
+$string['manage_pkmn'] = "Manage Messages";

@@ -42,16 +42,16 @@ class edit_form extends moodleform {
         $mform->setType('id', PARAM_INT);
         $mform->setDefault('id', $this->data->id ?? "");
 
-        $mform->addElement('text', 'pokemonname', get_string('msg_txt', 'local_pokemon_tracker')); // Add elements to your form.
+        $mform->addElement('text', 'pokemonname', get_string('pkmn_name', 'local_pokemon_tracker')); // Add elements to your form.
         $mform->setType('pokemonname', PARAM_NOTAGS);                   // Set type of element.
-        $mform->setDefault('pokemonname', get_string('enter_msg', 'local_pokemon_tracker'));        // Default value.
+        $mform->setDefault('pokemonname', get_string('enter_pkmn', 'local_pokemon_tracker'));        // Default value.
 
         $types = array("None","Normal", "Fire", "Water", "Grass", "Flying", "Fighting", "Poison", "Electric", "Ground", "Rock", "Psychic", "Ice", "Bug", "Ghost", "Steel", "Dragon", "Dark", "Fairy");
 
-        $mform->addElement('select',  'pokemontype1',  get_string('msg_type', 'local_pokemon_tracker'),  $types);
+        $mform->addElement('select',  'pokemontype1',  get_string('pkmn_type', 'local_pokemon_tracker'),  $types);
         $mform->setDefault('pokemontype1', 0);
 
-        $mform->addElement('select',  'pokemontype2',  get_string('msg_type', 'local_pokemon_tracker'),  $types);
+        $mform->addElement('select',  'pokemontype2',  get_string('pkmn_type', 'local_pokemon_tracker'),  $types);
         $mform->setDefault('pokemontype2', 0);
 
         $this->add_action_buttons();
