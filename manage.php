@@ -25,7 +25,7 @@ global $DB;
 
 $PAGE->set_url(new moodle_url('/local/pokemon_tracker/manage.php'));
 $PAGE->set_context(\context_system::instance());
-$PAGE->set_title(get_string('manage_msg', 'local_pokemon_tracker'));
+$PAGE->set_title(get_string('manage_pkmn', 'local_pokemon_tracker'));
 
 $pokemons = $DB->get_records('local_pokemon');
 
