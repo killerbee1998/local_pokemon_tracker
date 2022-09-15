@@ -28,7 +28,7 @@ $actionUrl = new moodle_url('/local/pokemon_tracker/edit.php');
 
 $PAGE->set_url($actionUrl);
 $PAGE->set_context(\context_system::instance());
-$PAGE->set_title(get_string('edit_msg', 'local_pokemon_tracker'));
+$PAGE->set_title(get_string('edit_pkmn', 'local_pokemon_tracker'));
 
 $mform = new edit_form($actionUrl, $_POST["pokemonid"]);
 $params = [
