@@ -34,3 +34,9 @@ $string['edit_pkmn'] = "Edit Messages";
 
 // manage.php
 $string['manage_pkmn'] = "Manage Messages";
+
+// delete.php
+$string['deletescore'] = "Delete Pokemon";
+$string['deletetitle'] = "Confirm Delete";
+$string['modalmessage'] = "Do you really want to delete this amazing pokemon?";
+$string['delete'] = "Delete";
