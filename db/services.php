@@ -30,3 +30,13 @@ $functions = array(
         'ajax'        => true
     ),
 );
+
+$services = array(
+    'local_pokemon_tracker' => array(
+        'functions' => array(
+            'local_pokemon_tracker_delete_pokemon_by_id'
+        ),
+        'restrictedusers' => 0,
+        'enabled' => 1
+    )
+);
