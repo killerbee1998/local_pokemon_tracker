@@ -37,6 +37,7 @@ $services = array(
             'local_pokemon_tracker_delete_pokemon_by_id'
         ),
         'restrictedusers' => 0,
-        'enabled' => 1
+        'enabled' => 1,
+        'shortname' => 'local_pokemon_tracker'
     )
 );
