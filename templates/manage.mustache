@@ -41,15 +41,14 @@
                 <button  class="btn btn-outline-secondary" style="width: 30%; margin-bottom: 1rem">{{pokemontype2}}</button>
             </div>
 
-            <form action="delete.php" method="post">
-                <input type="submit" name="pokemonid" value="{{id}}" id="delete_btn_{{id}}" style="font-size: 0; line-height: 0; " class="delete-btn"/>
-                <label for="delete_btn{{id}}" class="btn btn-danger" style="margin-left: -1rem;"> Delete {{pokemonname}} </label>
-            </form>
+            <button  name="pokemonid" value="{{id}}" id="delete_btn_{{id}}" class="btn btn-danger delete-btn" style="width: 10%; margin-bottom: 1rem">
+                Delete {{pokemonname}}
+            </button>
 
             {{! edit pokemon data }}
             <form action="edit.php" method="post">
                 <input type="submit" name="pokemonid" value="{{id}}" id="update_btn_{{id}}" style="font-size: 0; line-height: 0; "/>
-                <label for="update_btn{{id}}" class="btn btn-warning" style="margin-left: -1rem;"> Update {{pokemonname}} </label>
+                <label for="update_btn_{{id}}" class="btn btn-warning" style="margin-left: -1rem;"> Update {{pokemonname}} </label>
             </form>
             
         </div>
