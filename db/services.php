@@ -21,10 +21,10 @@
  */
 
 $functions = array(
-    'local_foootballscore_delete_score_by_id' => array(
-        'classname'   => 'local_footballscore_external',
-        'methodname'  => 'delete_score_by_id',
-        'classpath'   => 'local/footballscore/external.php',
+    'local_pokemon_tracker_delete_pokemon_by_id' => array(
+        'classname'   => 'local_pokemon_tracker_external',
+        'methodname'  => 'delete_pokemon_by_id',
+        'classpath'   => 'local/pokemon_tracker/external.php',
         'description' => 'Delete a single score by id',
         'type'        => 'write',
         'ajax'        => true
