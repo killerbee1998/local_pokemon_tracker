@@ -22,6 +22,7 @@
 
 require_once(__DIR__ . '/../../config.php');
 global $DB;
+global $PAGE;
 
 $PAGE->set_url(new moodle_url('/local/pokemon_tracker/manage.php'));
 $PAGE->set_context(\context_system::instance());
@@ -44,5 +45,6 @@ $templatecontext = (object)[
 ];
 
 echo $OUTPUT->render_from_template('local_pokemon_tracker/manage', $templatecontext);
+$PAGE->requires->js_call_amd('local_pokemon_tracker/confirmdelete', 'init', array());
 
 echo $OUTPUT->footer();
