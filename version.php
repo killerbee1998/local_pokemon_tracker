@@ -16,7 +16,7 @@
 
 /**
  * @package   local_pokemon_tracker
- * @copyright 2020, Riasat Mahbub <riasat.mahbub@brainstation-23.com>
+ * @copyright 2022, Riasat Mahbub <riasat.mahbub@brainstation-23.com>
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
