@@ -26,10 +26,12 @@ require_once($CFG->dirroot . "/local/pokemon_tracker/delete.php");
 
 
 class local_pokemon_tracker_external extends external_api {
+    
     /**
      * Returns description of method parameters.
      * @return external_function_parameters
      */
+    
     public static function delete_pokemon_by_id_parameters(): external_function_parameters {
         return new external_function_parameters(
             array(
@@ -37,6 +39,7 @@ class local_pokemon_tracker_external extends external_api {
             )
         );
     }
+
 
     /**
      * Delete pokemon by id function.
@@ -58,6 +61,7 @@ class local_pokemon_tracker_external extends external_api {
         );
 
     }
+
 
     /**
      * Returns description of method result value.
