@@ -21,12 +21,11 @@
 
 import $ from 'jquery';
 import Ajax from 'core/ajax';
-import str from 'core/str';
 import ModalFactory from 'core/modal_factory';
 import ModalEvents from 'core/modal_events';
 import Notification from 'core/notification';
 
-export const init = params => {
+export const init = () => {
 
     $('.delete-btn').on('click', function () {
         let elementId = $(this).attr('id');
@@ -50,7 +49,6 @@ export const init = params => {
                     methodname: wsfunction,
                     args: params
                 };
-                console.log(params);
                 Ajax.call([request])[0].done(function () {
                     window.location.href = $(location).attr('href');
                 }).fail(Notification.exception);
