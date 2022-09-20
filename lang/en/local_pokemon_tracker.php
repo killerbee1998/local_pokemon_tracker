@@ -24,16 +24,16 @@
 // forms/edit_form.php
  $string['enter_pkmn'] = 'Please enter a valid pokemon name';
  $string['pkmn_name'] = 'Pokemon Name';
- $string['pkmn_type'] = 'Message Type';
+ $string['pkmn_type'] = 'Pokemon Type';
  $string['id'] = "ID Number";
 
 //  edit.php
-$string['cancel_form'] = "You cancelled the message";
-$string['create_form'] = "You created a message with title ";
-$string['edit_pkmn'] = "Edit Messages";
+$string['cancel_form'] = "You cancelled the pokemon submission";
+$string['create_form'] = "You created a pokemon with the name ";
+$string['edit_pkmn'] = "Edit Pokemon Data";
 
 // manage.php
-$string['manage_pkmn'] = "Manage Messages";
+$string['manage_pkmn'] = "Manage Pokemon";
 
 // delete.php
 $string['deletescore'] = "Delete Pokemon";
