@@ -28,11 +28,7 @@ function local_pokemon_tracker_delete_pokemon($pokemonid){
 
     $params = [
         'id' => $pokemonid
-        // 'id' => $_POST["pokemonid"]
     ];
     
-    // echo "<p> Pokemon with Id ". $_POST["pokemonid"] . " is now deleted </p>";
     $DB->delete_records('local_pokemon', $params);    
-
-    // redirect($CFG->wwwroot . '/local/pokemon_tracker/manage.php', get_string('create_form', 'local_pokemon_tracker'). $fromform->pokemonname);
 }
