@@ -30,7 +30,7 @@ export const init = params => {
 
     $('.delete-btn').on('click', function () {
         let elementId = $(this).attr('id');
-        let arr = elementId.split("-");
+        let arr = elementId.split("_");
         let pokemonId = arr[arr.length - 1];
         // eslint-disable-next-line promise/catch-or-return
         ModalFactory.create({
@@ -50,6 +50,7 @@ export const init = params => {
                     methodname: wsfunction,
                     args: params
                 };
+                console.log(params);
                 Ajax.call([request])[0].done(function () {
                     window.location.href = $(location).attr('href');
                 }).fail(Notification.exception);
