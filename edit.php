@@ -30,25 +30,26 @@ $PAGE->set_url($actionUrl);
 $PAGE->set_context(\context_system::instance());
 $PAGE->set_title(get_string('edit_pkmn', 'local_pokemon_tracker'));
 
-$mform = new edit_form($actionUrl, $_POST["pokemonid"]);
-$params = [
-    'id' => $_POST["pokemonid"]
-];
+if (!empty($_POST["pokemonid"])) {
+    $mform = new edit_form($actionUrl, $_POST["pokemonid"]);
+    $params = [
+        'id' => $_POST["pokemonid"]
+    ];
 
 
-$pokemons = $DB->get_records('local_pokemon', $params);
-$pokemons = array_values($pokemons)[0];
+    $pokemons = $DB->get_records('local_pokemon', $params);
+    $pokemons = array_values($pokemons)[0];
 
-$pokemonformdata = new stdClass();
-$pokemonformdata->id = $pokemons->id;
-$pokemonformdata->pokemonname = $pokemons->pokemonname;
-$pokemonformdata->pokemontype1 = $pokemons->pokemontype1;
-$pokemonformdata->pokemontype2 = $pokemons->pokemontype2;
+    $pokemonformdata = new stdClass();
+    $pokemonformdata->id = $pokemons->id;
+    $pokemonformdata->pokemonname = $pokemons->pokemonname;
+    $pokemonformdata->pokemontype1 = $pokemons->pokemontype1;
+    $pokemonformdata->pokemontype2 = $pokemons->pokemontype2;
 
-// var_dump($pokemons->id);
-// die;
-
-$mform->set_data($pokemonformdata);
+    $mform->set_data($pokemonformdata);
+} else {
+    $mform = new edit_form($actionUrl);
+}
 
 if ($mform->is_cancelled()) {
     //Handle form cancel operation, if cancel button is present on form
@@ -57,13 +58,19 @@ if ($mform->is_cancelled()) {
 } else if ($fromform = $mform->get_data()) {
     //In this case you process validated data. $mform->get_data() returns data posted in form.
     $recordtoinsert = new stdClass();
-    $recordtoinsert->id = $fromform->id;
     $recordtoinsert->pokemonname = $fromform->pokemonname;
     $recordtoinsert->pokemontype1 = $fromform->pokemontype1;
     $recordtoinsert->pokemontype2 = $fromform->pokemontype2;
 
-    $DB->update_record('local_pokemon', $recordtoinsert);
-    redirect($CFG->wwwroot . '/local/pokemon_tracker/manage.php', get_string('create_form', 'local_pokemon_tracker') . $fromform->pokemonname);
+
+    if (!empty($fromform->id)) {
+        $recordtoinsert->id = $fromform->id;
+        $DB->update_record('local_pokemon', $recordtoinsert);
+        redirect($CFG->wwwroot . '/local/pokemon_tracker/manage.php', get_string('create_form', 'local_pokemon_tracker') . $fromform->pokemonname);
+    } else {
+        $DB->insert_record('local_pokemon', $recordtoinsert);
+        redirect($CFG->wwwroot . '/local/pokemon_tracker/manage.php', get_string('create_form', 'local_pokemon_tracker') . $fromform->pokemonname);
+    }
 }
 
 echo $OUTPUT->header();
